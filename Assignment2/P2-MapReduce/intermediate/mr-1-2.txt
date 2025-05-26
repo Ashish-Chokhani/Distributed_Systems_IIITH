@@ -1,0 +1,6 @@
+dog file2.txt
+barked file2.txt
+loudly file2.txt
+been file2.txt
+dog file2.txt
+clever file2.txt

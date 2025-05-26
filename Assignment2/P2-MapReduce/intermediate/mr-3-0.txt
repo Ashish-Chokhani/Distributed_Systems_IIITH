@@ -1,0 +1,13 @@
+the file4.txt
+animals file4.txt
+including file4.txt
+foxes file4.txt
+dogs file4.txt
+the file4.txt
+fox file4.txt
+the file4.txt
+dogs file4.txt
+chase file4.txt
+foxes file4.txt
+the file4.txt
+wild file4.txt

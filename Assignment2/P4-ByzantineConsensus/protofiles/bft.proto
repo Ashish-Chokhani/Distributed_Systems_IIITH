@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package byzantine;
+
+option go_package = "github.com/example/protofiles";
+
+// The Byzantine service definition
+service ByzantineService {
+  // Commander sends initial order to lieutenants
+  rpc SendOrder (OrderRequest) returns (OrderResponse);
+  
+  // Generals exchange messages to reach consensus
+  rpc ExchangeMessage (MessageRequest) returns (MessageResponse);
+  
+  // Register a general with the system
+  rpc RegisterGeneral (RegisterRequest) returns (RegisterResponse);
+  
+  // Get final consensus decision
+  rpc GetConsensus (ConsensusRequest) returns (ConsensusResponse);
+}
+
+// Decision type
+enum Decision {
+  ATTACK = 0;
+  RETREAT = 1;
+}
+
+// Role of a general
+enum Role {
+  COMMANDER = 0;
+  LIEUTENANT = 1;
+}
+
+// RegisterRequest represents registration of a general
+message RegisterRequest {
+  int32 id = 1;
+  Role role = 2;
+  bool is_traitor = 3; // For simulation purposes
+}
+
+// RegisterResponse after registering a general
+message RegisterResponse {
+  bool success = 1;
+  string message = 2;
+  int32 total_generals = 3;
+}
+
+// OrderRequest is sent by the commander to lieutenants
+message OrderRequest {
+  int32 sender_id = 1;
+  int32 receiver_id = 2;
+  Decision order = 3;
+}
+
+// OrderResponse after receiving an order
+message OrderResponse {
+  bool received = 1;
+  string message = 2;
+}
+
+// MessageRequest represents a message between generals
+message MessageRequest {
+  int32 round = 1;
+  int32 sender_id = 2;
+  int32 receiver_id = 3;
+  Decision value = 4;
+  repeated int32 path = 5; // Path the message has taken
+}
+
+// MessageResponse after receiving a message
+message MessageResponse {
+  bool received = 1;
+  string message = 2;
+}
+
+// ConsensusRequest to get final decision
+message ConsensusRequest {
+  int32 general_id = 1;
+}
+
+// ConsensusResponse with final decision
+message ConsensusResponse {
+  Decision decision = 1;
+  bool consensus_reached = 2;
+  string details = 3;
+  map<string, int32> vote_counts = 4;
+}

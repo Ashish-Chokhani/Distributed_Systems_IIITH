@@ -1,0 +1,6 @@
+in file5.txt
+to file5.txt
+survive file5.txt
+dog file5.txt
+again file5.txt
+creatures file5.txt

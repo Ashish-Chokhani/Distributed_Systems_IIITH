@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package protofiles;
+
+option go_package = "github.com/example/protofiles";
+
+service Master {
+  rpc AssignMapTask(MapRequest) returns (TaskResponse);
+  rpc AssignReduceTask(ReduceRequest) returns (TaskResponse);
+}
+
+service Worker {
+  rpc Map(MapRequest) returns (TaskResponse);
+  rpc Reduce(ReduceRequest) returns (TaskResponse);
+}
+
+message MapRequest {
+  int32 map_task_id = 1;
+  string filename = 2;
+  int32 num_reducers = 3;
+  string mode = 4; // "inverted_index" or "word_count"
+}
+
+message ReduceRequest {
+  int32 reduce_task_id = 1;
+  string mode = 2;
+}
+
+message TaskResponse {
+  bool success = 1;
+  string message = 2;
+}

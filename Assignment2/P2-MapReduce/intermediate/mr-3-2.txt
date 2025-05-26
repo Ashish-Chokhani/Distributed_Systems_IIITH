@@ -1,0 +1,7 @@
+forest file4.txt
+home file4.txt
+to file4.txt
+many file4.txt
+clever file4.txt
+escaped file4.txt
+in file4.txt

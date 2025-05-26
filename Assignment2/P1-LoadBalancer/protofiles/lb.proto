@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package lb;
+
+option go_package = "github.com/example/protofiles";
+
+service LoadBalancer {
+    rpc RegisterServer(ServerInfo) returns (RegisterResponse);
+    rpc ReportLoad(ServerLoad) returns (LoadResponse);
+    rpc GetBestServer(BalanceRequest) returns (ServerInfo);
+}
+
+enum LoadBalanceStrategy {
+    PICK_FIRST = 0;
+    ROUND_ROBIN = 1;
+    LEAST_LOAD = 2;
+}
+
+message ServerInfo {
+    string address = 1;
+}
+
+message RegisterResponse {
+    string message = 1;
+}
+
+message ServerLoad {
+    string address = 1;
+    int32 load = 2;
+    bool available = 3;
+}
+
+message LoadResponse {
+    string message = 1;
+}
+
+message BalanceRequest {
+    LoadBalanceStrategy strategy = 1;
+}

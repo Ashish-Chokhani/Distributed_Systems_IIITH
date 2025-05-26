@@ -1,0 +1,6 @@
+quick file1.txt
+jumps file1.txt
+lazy file1.txt
+is file1.txt
+quick file1.txt
+and file1.txt

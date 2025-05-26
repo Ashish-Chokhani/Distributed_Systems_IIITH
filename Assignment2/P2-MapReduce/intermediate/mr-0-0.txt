@@ -1,0 +1,10 @@
+the file1.txt
+brown file1.txt
+fox file1.txt
+over file1.txt
+the file1.txt
+the file1.txt
+fox file1.txt
+foxes file1.txt
+are file1.txt
+animals file1.txt

@@ -1,0 +1,3 @@
+and file2.txt
+enemies file2.txt
+chased file2.txt

@@ -1,0 +1,14 @@
+the file5.txt
+wild file5.txt
+animals file5.txt
+foxes file5.txt
+dogs file5.txt
+adapt file5.txt
+the file5.txt
+fox file5.txt
+the file5.txt
+both file5.txt
+dogs file5.txt
+foxes file5.txt
+are file5.txt
+resilient file5.txt

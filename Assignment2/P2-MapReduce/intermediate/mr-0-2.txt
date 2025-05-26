@@ -1,0 +1,3 @@
+dog file1.txt
+smart file1.txt
+clever file1.txt
