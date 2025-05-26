@@ -51,7 +51,7 @@ This program implements a **Distributed Breadth-First Search (BFS)** using MPI f
 
 For N=10000 M=9999 K=100000 L=0, we obtain the following plot:
 
-![Plot 1](./1/1.png)
+![Plot 1](./P1-MazeEscape/1.png)
 
 ---
 
@@ -202,7 +202,7 @@ This program simulates the movement of agents on a 2D grid based on a set of rul
 - **Speedup:** The parallel version shows near-linear speedup with an increasing number of processes until communication overhead becomes significant.
 
 For N=981 M=704 K=175 T=862, we obtain following plot
-![Plot 2](./2/2.png)
+![Plot 2](./P2-BouncingBalls/2.png)
 
 ### Observations
 1. **Communication Overhead:** As the number of processes increases, the communication overhead from `MPI_Allgather` and `MPI_Gatherv` becomes the limiting factor.
